@@ -9,10 +9,10 @@
 
 <form method="post" action="">
     <label for="num1">Enter the first number:</label><br>
-    <input type="text" id="num1" name="num1"><br><br>
+    <input type="number" id="num1" name="num1"><br><br>
     
     <label for="num2">Enter the second number:</label><br>
-    <input type="text" id="num2" name="num2"><br><br>
+    <input type="number" id="num2" name="num2"><br><br>
     
     <input type="submit" value="Add">
 </form>
@@ -24,22 +24,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Retrieve the numbers entered by the user
         $num1 = $_POST['num1'];
         $num2 = $_POST['num2'];
-
-        // Validate if the input is numeric
-        if (is_numeric($num1) && is_numeric($num2)) {
-            // Perform addition
-            $sum = $num1 + $num2;
-            echo "<p>The sum of $num1 and $num2 is: $sum</p>";
-        } else {
-            // Display error message if input is not numeric
-            echo "<p>Please enter valid numeric values.</p>";
-        }
-    } else {
-        // Display error message if any input field is empty
-        echo "<p>Please fill in both fields.</p>";
+        
+        // Convert the input values to integers
+        $num1 = intval($num1);
+        $num2 = intval($num2);
+        
+        // Calculate the sum
+        $sum = $num1 + $num2;
+        
+        // Display the sum
+        echo "<p>The sum of $num1 and $num2 is: $sum</p>";
     }
-}
-?>
 
+    
+}
+
+?>
 </body>
 </html>
