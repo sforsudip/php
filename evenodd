@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EvenOdd</title>
+<style>
+    *{
+        margin:0;
+        padding: 0;
+    }
+
+    body{
+        overflow: auto;
+    }
+    .main{
+        width: 100vw;
+        height: 100vh;
+        background-color: red;
+        display: grid;
+        place-items: center;
+    }
+    .child{
+        width: 50vw;
+        height: 50vh;
+        background-color: yellow;
+        padding: 50px;
+
+    }
+
+</style>
+
+
+</head>
+<body>
+    <div class="main">
+        <div class="child">
+          <form action="evenodd.php" method="GET">
+          <label>Enter Your Number</label><br>
+          <input type="number" name="number"><br><br>
+          <input type="submit" name="submit">
+        </form>
+
+        </div>
+
+
+    </div>
+    
+    
+</body>
+
+<?php
+if($_SERVER["REQUEST_METHOD"]=="GET"){
+    if(isset($_GET["submit"])){
+        $num =$_GET["number"];
+        if($num%2==0){
+            echo"The number {$num} is EVEN";
+        }
+        else{
+            echo"The number {$num} is ODD";
+        }
+    }
+
+}
+?>
+</html>
