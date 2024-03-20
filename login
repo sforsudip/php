@@ -62,7 +62,7 @@
 
         <div class="child">
             <h2>User Login Form</h2><br>
-            <form action="loginform.php" method="POST">
+            <form action="user.php" method="POST">
                 <label>Username</label><br>
                 <input type="text" name="user" placeholder="Enter Your Username"><br>
                 <label>Password</label><br>
